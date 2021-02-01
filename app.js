@@ -75,6 +75,9 @@ const item2 = new Item({
   name: "Hit the + button to add a new item."
 });
 const item3 = new Item({
+  name: "<--- Hit this to cross an item"
+});
+const item4 = new Item({
   name: "Hit this to delete an item ---> "
 });
 
