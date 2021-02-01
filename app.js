@@ -290,7 +290,11 @@ app.get("/about", function(req, res){
 /////////////////////////////////////////////////////////////
 // STARTING THE SERVER
 /////////////////////////////////////////////////////////////
-const LOCAL_PORT = process.env.LOCAL_PORT;
-app.listen(process.env.Port || LOCAL_PORT, function() {
-  console.log("Server started on port.");
-});
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+ 
+app.listen(port, function() {
+  console.log("Server started succesfully");
+}); 
