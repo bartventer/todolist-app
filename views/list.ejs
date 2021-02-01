@@ -1,0 +1,48 @@
+<%- include("header") -%>
+
+<div id="searchBox">
+  <form action="/cusomtListSearch" method="post">
+    <label for="customList">Custom List Search:</label>
+    <input type="search" id="customList" name="customListName" autocomplete="off" placeholder="Enter list name" required>
+    <button id="searchButton" type="submit" >Go</button>
+  </form>
+</div>
+
+<div class="box" id="heading">
+  <h1 id="pageName"><%= listTitle %></h1>
+  <h2 id="date"><%= todaysDate %></h2>
+</div>
+
+<div class="box">
+  <%newListItems.forEach(function(item){%>
+  <form action="/delete" method="post">
+    <div class="item">
+
+      <% if (item.checkbox ===0){ %>
+      <input type="checkbox" value="<%= item._id %>" onchange="handleSelectChange(event)">
+      <% }else{ %>
+      <input type="checkbox" checked value="<%= item._id %>" onchange="handleSelectChange(event)">
+      <%} %>
+
+      <p style=" width: -webkit-fill-available"><%= item.name %></p>
+
+
+      <input type="hidden" name="itemToDelete" value="<%= item._id %>">
+      <input type="hidden" name="listName" value="<%= listTitle %>">
+      <button class="deleteItem" type="submit">␡</button>
+
+    </div>
+  </form>
+
+  <% }) %>
+
+  <form class="item" action="/" method="post">
+    <input type="text" name="newItem" placeholder="New Item" autocomplete="off" required>
+    <button class="addItem" type="submit" name="listName" value=<%= listTitle %>>+</button>
+  </form>
+
+</div>
+
+
+
+<%- include("footer") -%>

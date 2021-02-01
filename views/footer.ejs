@@ -1,0 +1,61 @@
+
+</body>
+
+<footer>
+  <div>
+  <span class="copyrightInfo">© Bart Venter </span>
+  </div>
+
+  <div class="footerLinksBox">
+    <ul class="footerLinksList">
+      <li>
+        <a href="https://www.linkedin.com/in/bart-venter-ca-sa-606bb0141/">
+          <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="icon fab fa-linkedin fa-stack-1x fa-inverse"></i>
+          </span>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.facebook.com/bart.venter.12">
+          <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="icon fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+          </span>
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/bartventer?tab=repositories">
+          <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="icon fab fa-github fa-stack-1x fa-inverse"></i>
+          </span>
+        </a>
+      </li>
+    </ul>
+
+  </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+  // Post request for checking a box
+  function handleSelectChange(event) {
+    var selectElement = event.target;
+    var value = selectElement.value;
+    var listName = $("#pageName").text();
+    $.post("/checkbox", {
+      listName: listName,
+      item_id: value,
+      checkbox: "toggle"
+    });
+  }
+
+  // Updating footer date
+  const footerDate = new Date().getFullYear();
+  $(".copyrightInfo").append(footerDate);
+
+</script>
+
+</html>
