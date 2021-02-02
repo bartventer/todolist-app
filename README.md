@@ -1,4 +1,4 @@
-# My Newsletter subsription App.
+# My To-do List App.
 * https://barts-to-do-list.herokuapp.com/
 * An End-to-End application, managed from development through to live deployment.
 * Developed with Node.js, Express.js, MongoDb, Mongo Atlas, Heroku, JavaScript, HTML and CSS
